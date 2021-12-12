@@ -23,7 +23,7 @@ build:
       cmds:
         - ./configure --prefix={% exportDir %} --docdir={% exportDir %}/share/doc/bison-3.7.6 --enable-relocatable
         - make
-        - make check
+#        - make check
         - make install
       directory: "{% srcDir %}/bison-{% version %}"
   - export: "{% exportDir %}"
