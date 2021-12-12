@@ -1,0 +1,28 @@
+schema-version: 1.0
+
+description: |
+  Le paquet Bison contient un générateur d'analyseurs.
+
+  Programmes installés: bison et yacc
+  Bibliothèque installée: liby.a
+  Répertoire installé: /usr/share/bison
+
+  bison: Génère, à partir d'une série de règles, un programme d'analyse de structure de fichiers texte ; Bison est un remplacement pour Yacc (Yet Another Compiler Compiler)
+  yacc: Un emballage pour bison, utile pour les programmes qui appellent toujours yacc au lieu de bison ; il appelle bison avec l'option -y
+  liby: La bibliothèque Yacc contenant des implémentations, compatible Yacc, des fonctions yyerror et main ; cette bibliothèque n'est généralement pas très utile mais POSIX la réclame
+
+builder:
+  origin: ./bison-builder
+  var:
+    version: "{% version %}"
+
+dependency: https://github.com/xbee-linux/m4.git
+
+var:
+  version: 3.7.6
+
+
+provision:
+  - copy:
+      builder: bison
+      todir: /usr
