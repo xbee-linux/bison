@@ -7,11 +7,7 @@ const:
   srcDir: /usr/src
   exportDir: /opt/bison
 
-
-var:
-  version: 3.7.6
-
-dependency: https://github.com/xbee-linux/m4.git
+dependency: m4
 
 provision:
   - url:
@@ -21,10 +17,10 @@ provision:
 build:
   - shell:
       cmds:
-        - ./configure --prefix={% exportDir %} --docdir={% exportDir %}/share/doc/bison-3.7.6 --enable-relocatable
+        - ./configure --prefix=/usr --enable-relocatable
         - make
 #        - make check
-        - make install
+        - make install DESTDIR={% exportDir %}
       directory: "{% srcDir %}/bison-{% version %}"
   - export: "{% exportDir %}"
 
