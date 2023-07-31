@@ -15,13 +15,13 @@ description: |
 
 dependency: m4
 
-in:
+var:
   version: 3.7.6
 
 provision:
   - url:
-      from: https://ftp.gnu.org/gnu/bison/bison-{% version %}.tar.xz
-      todir: "{% xbeeSrc %}"
+      from: https://ftp.gnu.org/gnu/bison/bison-{{ .version }}.tar.xz
+      todir: "{{ .xbee.src }}"
 
 build:
   - shell:
@@ -29,7 +29,7 @@ build:
         - ./configure --prefix=/usr --enable-relocatable
         - make
 #        - make check
-        - make install DESTDIR={% xbeeOut %}
-      directory: "{% xbeeSrc %}/bison-{% version %}"
+        - make install DESTDIR={{ .xbee.out }}
+      directory: "{{ .xbee.src }}/bison-{{ .version }}"
 
 
