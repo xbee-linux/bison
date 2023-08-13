@@ -13,7 +13,7 @@ description: |
   yacc: Un emballage pour bison, utile pour les programmes qui appellent toujours yacc au lieu de bison ; il appelle bison avec l'option -y
   liby: La bibliothèque Yacc contenant des implémentations, compatible Yacc, des fonctions yyerror et main ; cette bibliothèque n'est généralement pas très utile mais POSIX la réclame
 
-dependency: m4
+builder: m4
 
 var:
   version: 3.7.6
