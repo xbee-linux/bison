@@ -16,10 +16,11 @@ description: |
 builder: m4
 
 var:
-  version: 3.7.6
+  xbee:
+    version: 3.7.6
 
 provision:
-  url: https://ftp.gnu.org/gnu/bison/bison-{{ .version }}.tar.xz
+  url: https://ftp.gnu.org/gnu/bison/bison-{{ .xbee.version }}.tar.xz
 
 build:
   - shell:
@@ -28,6 +29,6 @@ build:
         - make
 #        - make check
         - make install DESTDIR={{ .xbee.out }}
-      directory: "{{ .xbee.src }}/bison-{{ .version }}"
+      directory: "{{ .xbee.src }}/bison-{{ .xbee.version }}"
 
 
