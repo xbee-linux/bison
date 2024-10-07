@@ -1,7 +1,5 @@
 schema-version: 1.0
 
-type: builder
-
 description: |
   Le paquet Bison contient un générateur d'analyseurs.
 
