@@ -22,7 +22,7 @@ provision:
 
 build:
   - shell:
-      cmds:
+      cmd:
         - ./configure --prefix=/usr --enable-relocatable
         - make
 #        - make check
